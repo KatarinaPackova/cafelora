@@ -2,6 +2,7 @@ import './drink.css';
 import { Layer } from '../layer/layer';
 
 export const Drink = ({ id, name, ordered, layers, image }) => {
+  const drinkMessage = ordered ? 'Zrušit' : 'Objednat';
   return (
     <section id="drink">
       <div className="container">
@@ -22,7 +23,7 @@ export const Drink = ({ id, name, ordered, layers, image }) => {
         </div>
         <form className="drink__controls">
           <input type="hidden" className="order-id" value="0" />
-          <button className="order-btn">Objednat</button>
+          <button className="order-btn">{drinkMessage}</button>
         </form>
       </div>
     </section>
